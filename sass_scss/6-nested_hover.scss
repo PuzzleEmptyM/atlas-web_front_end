@@ -1,0 +1,11 @@
+// color assignemnts
+$red: #ff0000;
+$green: #00ff00;
+
+// Color usage
+button {
+    color: $red;
+    &:hover {
+        color: $green;
+    }
+}
