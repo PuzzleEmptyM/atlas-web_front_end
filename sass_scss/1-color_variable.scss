@@ -2,6 +2,9 @@
 $textColor: #3D3D3D;
 
 // Use the variable for setting text color in body and p tags
-body, p {
+body {
+  color: $textColor;
+}
+p {
   color: $textColor;
 }
