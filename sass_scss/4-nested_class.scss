@@ -1,0 +1,11 @@
+// Define variables for colors
+$color1: #3D3D3D;
+$color2: #FF0000;
+
+// Use variables
+body {
+    color: $color1;
+    .red {
+        color: $color2;
+    }
+}
