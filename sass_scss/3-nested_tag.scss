@@ -1,0 +1,12 @@
+// Define variables for formatting
+$noMargin: 0px;
+$margin: 10px;
+
+// Apply formatting
+body {
+    margin: $noMargin;
+    padding: $noMargin;
+    p {
+        margin: $margin;
+    }
+}
