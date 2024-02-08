@@ -1,0 +1,15 @@
+// Color assignments
+$size1: 14px;
+$size2: 16px;
+$size3: 12px;
+
+// using the colors
+body {
+    font-size: $size1;
+    h1 {
+        font-size: $size2;
+        &.smaller {
+            font-size: $size3;
+        }
+    }
+}
