@@ -663,44 +663,40 @@
   /*** FORM ***/
 /* Comment section
     ============================= */
-
-  .post-comments {
+.post-comments {
     width: 80%;
     margin: 10rem 0 0 auto;
     padding-left: 7rem;
-  }
+}
 
-  .post-comments .section-title {
+.post-comments .section-title {
     font-variant: small-caps;
-  }
+}
 
-  /* Basic form
+/* Basic form
     ============================= */
-
-  form {
+form {
     display: flex;
     flex-direction: column;
     padding: 1rem 0;
     margin: 0;
-  }
+}
 
-  fieldset {
+fieldset {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     border: none;
     padding: 0 0 2rem;
-  }
-
-  label {
+}
+label {
     cursor: pointer;
     display: block;
-    white-space: nowrap;
     font-size: 1.4rem;
     padding: 0 0 .5rem;
-  }
-
-  input[type="text"], input[type="email"], textarea {
+    white-space: nowrap;
+}
+input[type="text"], input[type="email"], textarea {
     position: relative;
     width: 100%;
     padding: 1.2rem;
@@ -709,51 +705,48 @@
     background-color: var(--color-white);
     box-shadow: none;
     outline: 0;
-  }
-
-  input[type="text"], input[type="email"] {
+}
+input[type="text"], input[type="email"] {
     padding-right: 3rem;
-  }
-
-  input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border: .1rem solid var(--color-grey);
     background-color: var(--color-light-grey);
-  }
-
-  ::placeholder {
+}
+::placeholder {
     font-style: italic;
     font-size: var(--font-size-small);
-  }
+}
 
-  /* Form group
+/* Form group
 ============================= */
 
-  .form-group {
+.form-group {
     padding: 1rem;
     margin: 0;
     background-color: var(--color-white);
-  }
+}
 
-  .form-group:focus-within {
+.form-group:focus-within {
     background-color: var(--color-light-grey);
     transition: .3s;
-  }
+}
 
-  /* Form field
+/* Form field
 ============================= */
 
-  .form-field-container {
+.form-field-container {
     position: relative;
-  }
+}
 
-  .form-field-icon {
+.form-field-icon {
     font-style: normal;
-  }
+}
 
-  /* Form help
+/* Form help
 ============================= */
 
-  .form-group .form-help {
+.form-group .form-help {
     margin: 0;
     line-height: 1.3;
     letter-spacing: .019rem;
@@ -762,19 +755,18 @@
     max-height: 0;
     transition: .3s;
     overflow: hidden;
-  }
+}
 
-  .form-group:focus-within .form-help { 
+.form-group:focus-within .form-help {
     max-height: 20rem;
     margin: .4rem 0 0;
-  }
+}
 
-  /* Form error handling
+/* Form error handling
 ============================= */
+/* The following code is used to place the icon in the after pseudo element. Because after and before are not possible in an input, we need to use a span that will be positioned on the right of our input. */
 
-  /* The following code is used to place the icon in the after pseudo element. Because after and before are not possible in an input, we need to use a span that will be positioned on the right of our input. */
-
-  input:not(:placeholder-shown) ~ .form-field-icon::after {
+input:not(:placeholder-shown) ~ .form-field-icon::after {
     height: 100%;
     right: 0;
     pointer-events: none;
@@ -782,60 +774,59 @@
     top: 0;
     width: 1.3em;
   }
-
+  
   /* Because inputs are invalid by default, we need to be careful and show the icon when we are not in focus and when when the input is not empty (placeholder-shown). Careful with this one because it is not supported everywhere. */
-
+  
   input:required:invalid:not(:focus):not(:placeholder-shown) ~ .form-field-icon::after {
     content: '✘';
     color: var(--error-color);
   }
-
+  
   input:required:valid ~ .form-field-icon::after {
     content: '✔';
     color: var(--valid-color);
   }
-
+  
   /* We want to hide the helper text when we are not in focus. The tilte allows us to select a sibling element in CSS */
-
+  
   input:required:valid ~ .form-help {
     max-height: 0;
   }
-
+  
   /* Showing a border in a different color is good but not enough. For accessibility purposes, we added an icon when the input is valid or invalid to have a visual distinction that is not only color based.*/
-
+  
   input:required:invalid:not(:focus):not(:placeholder-shown),
   textarea:invalid:not(:focus):not(:placeholder-shown) {
     border: 0.1rem solid var(--error-color);
   }
-
+  
   input:required:valid:not(:placeholder-shown),
   textarea:valid:not(:placeholder-shown) {
     border: 0.1rem solid var(--valid-color);
   }
 
   /*** SEARCH FORM ***/
-
-  .form-search {
+.form-search {
     display: block;
     padding: .5rem 0;
     position: relative;
-  }
+}
 
-  .form-search .search-button {
+.form-search .search-button {
     display: inline-block;
     background: transparent;
     border: 0;
     margin: 0;
     padding: 0;
-  }
+}
 
-  .search-button .search-icon {
+.search-button .search-icon {
     fill: var(--color-white);
     width: 1.5rem;
     height: 1.5rem;
-  }
+}
 
-  .form-search input[type="search"] {
+.form-search input[type="search"] {
     display: inline-block;
     color: var(--color-white);
     padding-right: 2rem;
@@ -849,9 +840,8 @@
     cursor: pointer;
     z-index: 3;
     transition: width .4s cubic-bezier(0, 0.795, 0, 1);
-  }
-
-  .form-search input[type="search"]:focus {
+}
+.form-search input[type="search"]:focus {
     position: relative;
     width: 15rem;
     z-index: 1;
@@ -859,4 +849,4 @@
     padding: 0;
     cursor: text;
     margin: 0 1rem;
-  }
+}
