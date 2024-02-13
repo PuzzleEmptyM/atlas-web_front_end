@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="07-styles.css">
+    <link rel="stylesheet" href="06-styles.css">
   </head>
   <body>
     <!– Header –>
@@ -45,17 +45,17 @@
               </li>
               <li class="nav-item">
                 <form action="#" method="post" class="form-search">
-                  <input type="search" name="q" id="search-input" placeholder="Search..." aria-label="Search through site content">
-                  <button>
-                    <svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="search-icon">
-                      <title>
-                        Search icon
-                      </title>
-                      <path d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"/>
-                    </svg>
-                  </button>
+                    <input type="search" name="q" id="search-input" placeholder="Search..." aria-label="Search through site content">
+                    <button class="search-button">
+                        <svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="search-icon">
+                            <title>
+                              Search icon
+                            </title>
+                            <path d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"/>
+                          </svg>
+                    </button>
                 </form>
-              </li>
+            </li>
             </ul>
           </nav>
         </div>
@@ -157,68 +157,70 @@
           </div>
           <section class="post-comments">
             <header>
-              <h2 class="section-title">Leave a comment</h2>
-              <p>All fields are required.</p>
+                <h2 class="section-title">Leave a comment</h2>
+                <p>All fields are required.</p>
             </header>
-              <form action="#" method="post">
+            <form action="#" method="post">
                 <fieldset>
-                  <legend class="visually-hidden">Your personal information</legend>
-                  <div class="form-group col-1-2">
-                    <label for="your-first-name">First Name</label>
-                    <div class="form-field">
-                      <span class="form-field-container">
-                        <input type="text" name="your-first-name" id="your-first-name" placeholder="e.g. Mike" pattern="[A-Za-zÀ-ž\s]{3,}" maxlength="35" autocomplete="on" accesskey="f" required>
-                        <i class="form-field-icon"></i>
-                      </span>
-                      <p class="form-help">First name should be at least 3 characters and only contains letters</p>
+                    <legend class="visually-hidden">Your personal information</legend>
+                    <div class="form-group col-1-2">
+                        <label for="your-first-name">First Name</label>
+                        <div class="form-field">
+                            <span class="form-field-container">
+                                <input type="text" name="your-first-name" id="your-first-name" placeholder="e.g. Mike" pattern="[A-Za-zÀ-ž\s]{3,}" maxlength="35" autocomplete="on" required="true" accesskey="f">
+                                <i class="form-field-icon"></i>
+                            </span>
+                            <p class="form-help">First name should be at least 3 characters and only contains letters</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group col-1-2">
-                    <label for="your-last-name">Last Name</label>
-                    <div class="form-field">
-                      <span class="form-field-container">
-                        <input type="text" name="your-last-name" id="your-last-name" placeholder="e.g. Smith" pattern="[A-Za-zÀ-ž\s]{3,}" maxlength="40" autocomplete="on" accesskey="l" required>
-                        <i class="form-field-icon"></i>
-                      </span>
-                      <p class="form-help">Last name should be at least 3 characters and only contains letters</p>
+                    <div class="form-group col-1-2">
+                        <label for="your-last-name">Last Name</label>
+                        <div class="form-field">
+                            <span class="form-field-container">
+                                <input type="text" name="your-last-name" id="your-last-name" placeholder="e.g. Smith" pattern="[A-Za-zÀ-ž\s]{3,}" maxlength="40" autocomplete="on" accesskey="l" required="true">
+                                <i class="form-field-icon"></i>
+                            </span>
+                            <p class="form-help">Last name should be at least 3 characters and only contains letters</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group col-2-3">
-                    <label for="your-email">Email</label>
-                    <div class="form-field">
-                      <span class="form-field-container">
-                        <input type="email" name="your-email" id="your-email" placeholder="e.g. youremail@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="55" autocomplete="on" accesskey="e" required>
-                        <i class="form-field-icon"></i>
-                      </span>
+                    <div class="form-group col-2-3">
+                        <label for="your-email">Email</label>
+                        <div class="form-field">
+                            <span class="form-field-container">
+                                <input type="email" name="your-email" id="your-email" placeholder="e.g. youremail@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="55" autocomplete="on" accesskey="e" required="true">
+                                <i class="form-field-icon"></i>
+                            </span>
+                        </div>
                     </div>
-                  </div>
                 </fieldset>
                 <fieldset>
-                  <legend class="visually-hidden">Your comment</legend>
-                  <div class="form-group col-2-3">
-                    <label for="your-title">Title</label>
-                    <div class="form-field">
-                      <span class="form-field-container">
-                        <input type="text" name="your-title" id="your-title" placeholder="e.g. I loved that article" pattern="[A-Za-zÀ-ž\s]{4,}" maxlength="75" autocomplete="on" accesskey="t" required>
-                        <i class="form-field-icon"></i>
-                      </span>
-                      <p class="form-help">Title should be at least 4 characters and only contains letters</p>
+                    <legend class="visually-hidden">Your comment</legend>
+                    <div class="form-group col-2-3">
+                        <label for="your-title">Title</label>
+                        <div class="form-field">
+                            <span class="form-field-container">
+                                <input type="text" name="your-title" id="your-title" placeholder="e.g. I loved that article" pattern="[A-Za-zÀ-ž\s]{4,}" maxlength="75" autocomplete="on" accesskey="t" required="true">
+                                <i class="form-field-icon"></i>
+                            </span>
+                            <p class="form-help">Title should be at least 4 characters and only contains letters</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group col-2-3">
-                    <label for="your-comment">Comment</label>
-                    <div class="form-field">
-                      <span class="form-field-container">
-                        <textarea name="your-comment" id="your-comment" cols="30" rows="6" placeholder="Write your comment here" minlength="10" accesskey="c" required></textarea>
-                      </span>
-                      <p class="form-help">Comment should be at least 10 characters   </p>
+                    <div class="form-group col-2-3">
+                        <label for="your-comment">Comment</label>
+                        <div class="form-field">
+                            <span class="form-field-container">
+                                <textarea name="your-comment" id="your-comment" placeholder="Write your comment here" minlength="10" accesskey="c" required="true" cols="30" rows="6">
+
+                                </textarea>
+                            </span>
+                            <p class="form-help">Comment should be at least 10 characters</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <button class="button button-primary">Post my comment</button>
-                  </div>
+                    <div class="form-group">
+                        <button class="button button-primary">Post my comment</button>
+                    </div>
                 </fieldset>
-              </form>
+            </form>
           </section>
         </div>
       </div>
