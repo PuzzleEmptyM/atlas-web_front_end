@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Holberton - Web Stack - Bootstrap</title>
+        <meta name="description" content="Bootstrap is a free and open-source CSS framework">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    </head>
+    <body>
+        <div class="container-md p-md-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mt-4">
+                        <div class="card-header">Coding</div>
+                        <img src="https://via.placeholder.com/450x200" />
+                        <div class="card-body">
+                            <h5 class="card-title">HTML</h5>
+                            <p class="card-text">Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.</p>
+                            <button data-bs-toggle="modal" data-bs-target="#playModal" type="button" class="btn btn-danger">Play with</button>
+                        </div>
+                        <div class="card-footer">40h</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mt-4">
+                        <div class="card-header">Coding</div>
+                        <img src="https://via.placeholder.com/450x200" />
+                        <div class="card-body">
+                            <h5 class="card-title">CSS</h5>
+                            <p class="card-text">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML</p>
+                            <button data-bs-toggle="modal" data-bs-target="#playModal" type="button" class="btn btn-danger">Play with</button>
+                        </div>
+                        <div class="card-footer">35h</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mt-4">
+                        <div class="card-header">Coding</div>
+                        <img src="https://via.placeholder.com/450x200" />
+                        <div class="card-body">
+                            <h5 class="card-title">Javascript</h5>
+                            <p class="card-text">JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.</p>
+                            <button data-bs-toggle="modal" data-bs-target="#playModal" type="button" class="btn btn-danger">Play with</button>
+                        </div>
+                        <div class="card-footer">70h</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="playModal" tabindex="-1" role="dialog" aria-labelledby="playModalLabel" aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="playModalLabel">Play with CodePen</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            CodePen is an online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets. 
+                            It functions as an online code editor and open-source learning environment, where developers can create code snippets, called "pens," and test them.
+                        </p>
+                        <p>
+                            It was founded in 2012 by full-stack developers Alex Vazquez and Tim Sabat and front-end designer Chris Coyier.
+                            Its employees work remotely, rarely all meeting together in person. 
+                        </p>
+                        <p>
+                            CodePen is one of the largest communities for web designers and developers to showcase their coding skills, with an estimated 330,000 registered users and 14.16 million monthly visitors.
+                        </p>
+
+                        <form class="pt-3 border-top">
+                            <div class="mb-3">
+                                <h5>Connect</h5>
+                            </div>
+                            <div class="mb-3 row align-items-center">
+                                <label for="username" class="form-label col-2">Username</label>
+                                <div class="col-10">
+                                    <input type="text" id="username" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="mb-3 row align-items-center">
+                                <label for="passowrd" class="form-label col-2">Password</label>
+                                <div class="col-10">
+                                    <input type="password" id="passowrd" class="form-control" />
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" type="button" class="btn btn-danger float-end">Connect</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
