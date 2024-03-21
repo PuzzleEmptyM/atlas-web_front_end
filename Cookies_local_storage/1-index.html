@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1, Create cookie with expiration</title>
+  <style>
+    #cookiesContainer {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login to the website</h1>
+  <input id="firstname" placeholder="Firstname" type="text">
+  <input id="email" placeholder="Email" type="text">
+  <button onclick="setCookies()">Log me in</button>
+  <h1>Cookies</h1>
+  <button onclick="showCookies()">Show the cookies</button>
+  <div id="cookiesContainer"></div>
+  <script>
+    function setCookies() {
+      var firstname = document.getElementById('firstname').value;
+      var email = document.getElementById('email').value;
+
+      if (!firstname || !email) {
+        alert("Please fill in both firstname and email.");
+        return;
+      }
+
+      var expiration = new Date();
+      expiration.setTime(expiration.getTime() + (10 * 24 * 60 * 60 * 1000)); // 10 days in milliseconds
+      var expires = "expires=" + expiration.toUTCString();
+
+      document.cookie = "firstname=" + encodeURIComponent(firstname) + ";" + expires + ";path=/";
+      document.cookie = "email=" + encodeURIComponent(email) + ";" + expires + ";path=/";
+    }
+
+    function showCookies() {
+      var cookiesContainer = document.getElementById('cookiesContainer');
+      // Clear the previous cookies display
+      cookiesContainer.innerHTML = '';
+
+      var cookies = document.cookie.split(';');
+      if (cookies.length === 1 && cookies[0] === "") {
+        var p = document.createElement('p');
+        p.textContent = "No cookies found. Please set them by logging in.";
+        cookiesContainer.appendChild(p);
+        return;
+      }
+
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim().split('=');
+        var cookieName = cookie[0];
+        var cookieValue = cookie[1];
+
+        if(cookieName !== "") {
+          var p = document.createElement('p');
+          p.textContent = "Cookie: " + cookieName + "=" + decodeURIComponent(cookieValue);
+          cookiesContainer.appendChild(p);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

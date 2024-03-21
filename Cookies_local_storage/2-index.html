@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2, Read Cookie</title>
+  <style>
+    #cookiesContainer {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login to the website</h1>
+  <input id="firstname" placeholder="Firstname" type="text">
+  <input id="email" placeholder="Email" type="text">
+  <button onclick="setCookies()">Log me in</button>
+  <h1>Cookies</h1>
+  <button onclick="showCookies()">Show the cookies</button>
+  <div id="cookiesContainer"></div>
+  <script>
+    function setCookies() {
+      var firstname = document.getElementById('firstname').value;
+      var email = document.getElementById('email').value;
+
+      if (!firstname || !email) {
+        alert("Please fill in both firstname and email.");
+        return;
+      }
+
+      var expiration = new Date();
+      expiration.setTime(expiration.getTime() + (10 * 24 * 60 * 60 * 1000)); // 10 days in milliseconds
+      var expires = "expires=" + expiration.toUTCString();
+
+      document.cookie = "firstname=" + encodeURIComponent(firstname) + ";" + expires + ";path=/";
+      document.cookie = "email=" + encodeURIComponent(email) + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length,c.length));
+      }
+      return "";
+    }
+
+    function showCookies() {
+      var firstname = getCookie('firstname');
+      var email = getCookie('email');
+
+      var cookiesContainer = document.getElementById('cookiesContainer');
+      // Clear the previous cookies display
+      cookiesContainer.innerHTML = '';
+
+      var p = document.createElement('p');
+      p.textContent = "Email: " + email + " - Firstname: " + firstname;
+      cookiesContainer.appendChild(p);
+    }
+  </script>
+</body>
+</html>
+
