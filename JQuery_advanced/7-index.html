@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Task 7</title>
+    <script type="application/javascript">
+      $(document).ready(function() {
+        function createSearchForm() {
+          var form = $('<form>').append(
+            $('<input>').attr({type: 'text'}),
+            $('<input>').attr({type: 'submit', value: 'Search'}),
+          );
+          var list = $('<ul>');
+          $('body').append(form, list);
+
+          form.on('submit', function(e) {
+            e.preventDefault();
+            var search = $(this).find('input[type="text"]').val();
+            queryWikipedia(search);
+          });
+        }
+
+        function addNewArticle(id, title, snippet) {
+          var li = $('<li>').append(
+            $('<p>').append(
+              $('<span>').text(id + ' - '),
+              $('<b>').text(title)
+            ),
+            $('<p>').html(snippet) // Use .html() to correctly display HTML
+          );
+          $('ul').append(li);
+        }
+
+        function queryWikipedia(search) {
+          $.ajax({
+            url: 'https://en.wikipedia.org/w/api.php',
+            data: {
+              action: 'query',
+              list: 'search',
+              srsearch: search,
+              format: 'json',
+              origin: '*'
+            },
+            success: function(data) {
+              $('ul').empty(); // Clear previous results
+              data.query.search.forEach(function(article) {
+                addNewArticle(article.pageid, article.title, article.snippet);
+              });
+            }
+          });
+        }
+
+        createSearchForm();
+      });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
